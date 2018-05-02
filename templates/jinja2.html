@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jinja2 Presentation</title>
+</head>
+<body>
+    <h1>This is variable placeholder: {{ name }}</h1>
+    <hr>
+    <ul>
+        {% for item in items %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    <hr>
+    <table>
+        <thead>
+            <tr>
+                <th>Item</th>
+                <th>Number</th>
+                <th>Comment</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for item, num in dicts.items() %}
+                <tr>
+                    <td>{{ item }}</td>
+                    <td>{{ num }}</td>
+                    {% if num == 1 %}
+                        <td>It's One</td>
+                    {% elif num % 2 == 0 %}
+                        <td>It's Even</td>
+                    {% else %}
+                        <td>It's Odd</td>
+                    {% endif %}
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
